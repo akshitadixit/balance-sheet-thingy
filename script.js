@@ -60,6 +60,69 @@ function bind3(tsf, tncl, tcl, tcal) {
     });
 }
 
+function bind5(tsf, tncl, tcal) {
+    tsf.addEventListener('keyup', function () {
+        tcal.value = parseFloat(tsf.value) + parseFloat(tncl.value);
+    });
+    tncl.addEventListener('keyup', function () {
+        tcal.value = parseFloat(tsf.value) + parseFloat(tncl.value);
+    });
+}
+
+function bind4(ltb, dtl, otll, ltp, tcp, tncl) {
+
+    ltb.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    dtl.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    ltp.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    otll.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    tcp.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value) + parseFloat(ltp.value)+ parseFloat(tcp.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+
+}
+
+function bind6(ltb, dtl, otll, ltp, tcp, ip, tncl) {
+
+    ltb.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value) +parseFloat(ip.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    dtl.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value) +parseFloat(ip.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    ltp.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value) +parseFloat(ip.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    otll.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value)+parseFloat(ltp.value)+ parseFloat(tcp.value) +parseFloat(ip.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    tcp.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value) + parseFloat(ltp.value)+ parseFloat(tcp.value) +parseFloat(ip.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+    ip.addEventListener('keyup', function () {
+        tncl.value = parseFloat(ltb.value) + parseFloat(dtl.value) + parseFloat(otll.value) + parseFloat(ltp.value)+ parseFloat(tcp.value) +parseFloat(ip.value);
+        tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
+    });
+
+}
+
 function submit() {
     console.log("here");
     var arr1 = [];
@@ -112,6 +175,53 @@ function submit() {
 
     bind3(tsf, tncl, tcl, document.getElementsByClassName('tcal19')[0]);
 
+    ltb = document.getElementsByClassName('ta20')[0];
+    dtl = document.getElementsByClassName('ia20')[0];
+    otll = document.getElementsByClassName('cwip20')[0];
+    ltp = document.getElementsByClassName('oa20')[0];
+    tncl = document.getElementsByClassName('fa20')[0];
+    bind2(ltb, dtl, otll, ltp, tncl);
+
+    ltb = document.getElementsByClassName('nci20')[0];
+    dtl = document.getElementsByClassName('dta20')[0];
+    otll = document.getElementsByClassName('ltlaa20')[0];
+    ltp = document.getElementsByClassName('onca20')[0];
+    bind4(ltb, dtl, otll, ltp, tncl, document.getElementsByClassName('tnca20')[0]);
+
+    ltb = document.getElementsByClassName('ci20')[0];
+    dtl = document.getElementsByClassName('i20')[0];
+    otll = document.getElementsByClassName('tr20')[0];
+    ltp = document.getElementsByClassName('cace20')[0];
+    tncl = document.getElementsByClassName('stlaa20')[0];
+    stb = document.getElementsByClassName('oca20')[0];
+    bind6(ltb, dtl, otll, ltp, tncl, stb, document.getElementsByClassName('tca20')[0]);
+
+    bind5(document.getElementsByClassName('tnca20')[0], document.getElementsByClassName('tca20')[0], document.getElementsByClassName('ta20')[1]);
+
+    ltb = document.getElementsByClassName('ta19')[0];
+    dtl = document.getElementsByClassName('ia19')[0];
+    otll = document.getElementsByClassName('cwip19')[0];
+    ltp = document.getElementsByClassName('oa19')[0];
+    tncl = document.getElementsByClassName('fa19')[0];
+    bind2(ltb, dtl, otll, ltp, tncl);
+
+    ltb = document.getElementsByClassName('nci19')[0];
+    dtl = document.getElementsByClassName('dta19')[0];
+    otll = document.getElementsByClassName('ltlaa19')[0];
+    ltp = document.getElementsByClassName('onca19')[0];
+    bind4(ltb, dtl, otll, ltp, tncl, document.getElementsByClassName('tnca19')[0]);
+
+    ltb = document.getElementsByClassName('ci19')[0];
+    dtl = document.getElementsByClassName('i19')[0];
+    otll = document.getElementsByClassName('tr19')[0];
+    ltp = document.getElementsByClassName('cace19')[0];
+    tncl = document.getElementsByClassName('stlaa19')[0];
+    stb = document.getElementsByClassName('oca19')[0];
+    bind6(ltb, dtl, otll, ltp, tncl, stb, document.getElementsByClassName('tca19')[0]);
+
+    bind5(document.getElementsByClassName('tnca19')[0], document.getElementsByClassName('tca19')[0], document.getElementsByClassName('ta19')[1]);
+
+    
 
 
     console.log("done ig");
