@@ -63,9 +63,11 @@ function bind3(tsf, tncl, tcl, tcal) {
 function bind5(tsf, tncl, tcal) {
     tsf.addEventListener('keyup', function () {
         tcal.value = parseFloat(tsf.value) + parseFloat(tncl.value);
+        tcal.dispatchEvent(new Event('keyup', { 'bubbles': true }));
     });
     tncl.addEventListener('keyup', function () {
         tcal.value = parseFloat(tsf.value) + parseFloat(tncl.value);
+        tcal.dispatchEvent(new Event('keyup', { 'bubbles': true }));
     });
 }
 
@@ -121,6 +123,29 @@ function bind6(ltb, dtl, otll, ltp, tcp, ip, tncl) {
         tncl.dispatchEvent(new Event('keyup', { 'bubbles': true }));
     });
 
+}
+
+function bindfin(){
+
+    var l1 = document.getElementsByClassName('tcal19')[0];
+    var l2 = document.getElementsByClassName('tcal20')[0];
+    var a1 = document.getElementsByClassName('ta19')[1];
+    var a2 = document.getElementsByClassName('ta20')[1];
+
+    document.getElementsByClassName('diff')[0].value = Math.abs((parseFloat(l1.value)+parseFloat(l2.value)) - (parseFloat(a1.value)+parseFloat(a2.value)));
+
+    l1.addEventListener('keyup', function(){
+        document.getElementsByClassName('diff')[0].value = Math.abs((parseFloat(l1.value)+parseFloat(l2.value)) - (parseFloat(a1.value)+parseFloat(a2.value)));
+    })
+    l2.addEventListener('keyup', function(){
+        document.getElementsByClassName('diff')[0].value = Math.abs((parseFloat(l1.value)+parseFloat(l2.value)) - (parseFloat(a1.value)+parseFloat(a2.value)));
+    });
+    a1.addEventListener('keyup', function(){
+        document.getElementsByClassName('diff')[0].value = Math.abs((parseFloat(l1.value)+parseFloat(l2.value)) - (parseFloat(a1.value)+parseFloat(a2.value)));
+    });
+    a2.addEventListener('keyup', function(){
+        document.getElementsByClassName('diff')[0].value = Math.abs((parseFloat(l1.value)+parseFloat(l2.value)) - (parseFloat(a1.value)+parseFloat(a2.value)));
+    });
 }
 
 function submit() {
@@ -221,6 +246,7 @@ function submit() {
 
     bind5(document.getElementsByClassName('tnca19')[0], document.getElementsByClassName('tca19')[0], document.getElementsByClassName('ta19')[1]);
 
+    bindfin();
     
 
 
